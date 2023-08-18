@@ -2,9 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <limits.h>
 
 /* Global variables */
 static char vn[10];
+static char cwd[PATH_MAX]
 
 /* Prototyping Functions */
 static void startup(void);
@@ -20,8 +23,10 @@ int main(int ac, char **argv){
   /* declaring void variables */
   (void)ac; (void)argv;
 
-  printf("%s", prompt);
+  printf("%s | %s ", getcwd(cwd, sizeof(cwd)), prompt);
   getline(&lineptr, &n, stdin);
+  get_tokens(lineptr);
+  
   printf("%s\n", lineptr);
 
   free(lineptr);
