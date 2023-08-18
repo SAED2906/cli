@@ -7,7 +7,7 @@
 
 /* Global variables */
 static char vn[10];
-static char cwd[PATH_MAX]
+static char cwd[PATH_MAX];
 
 /* Prototyping Functions */
 static void startup(void);
@@ -37,7 +37,7 @@ void startup(void)
 {
   printf("-----------------------------------------\n");
   printf("----| Discalaimer:                  |----\n");
-  printf("----| This is a WIP                 |----\n");
+  printf("----| This is a\033[0;34m WIP  \033[0m               |----\n");
   printf("----|     Made by William & John    |----\n");
   printf("----| • There may be critical bugs  |----\n");
   printf("----| • It lacks many features      |----\n");
@@ -48,7 +48,7 @@ void startup(void)
 /* TODO: 
 *  we need to add a parser 
 */
-void get_tokens(char *line) {
+void get_tokens(char line) {
     /* 
     separate lines into tokens
     replace whitespaces (strtok)
@@ -59,6 +59,9 @@ void get_tokens(char *line) {
 /* 
 * TODO: refresh current prompt to the newest generation
 */
-char* refresh_promt(){
-
+void refresh_promt(){
+	printf("%s | %s ", getcwd(cwd, sizeof(cwd)), prompt);
+    getline(&lineptr, &n, stdin);
+    get_tokens(lineptr);
+	printf("%s\n", lineptr);
 }
