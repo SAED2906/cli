@@ -20,7 +20,7 @@ int main(int ac, char **argv){
   char *tokens[3][1024];
 
   prompt = "(JW) $ ";
-  strcpy(vn, "1.0.0");
+  strcpy(vn, "1.0.1");
   startup();
 
   /* declaring void variables */
