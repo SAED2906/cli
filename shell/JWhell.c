@@ -40,3 +40,14 @@ void startup(void)
   printf("----> Version: %s\n", vn); 
   printf("-----------------------------------------\n");
 }
+/* TODO: 
+*  we need to add a parser 
+*/
+void get_tokens(char *line) {
+    /* 
+    separate lines into tokens
+    replace whitespaces (strtok)
+    parse commands 
+    code gen 
+    */
+}
