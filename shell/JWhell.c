@@ -8,26 +8,24 @@
 /* Global variables */
 static char vn[10];
 static char cwd[PATH_MAX];
+static char *prompt;
 
 /* Prototyping Functions */
 static void startup(void);
-
+static void refresh_prompt(char* lineptr, size_t n);
 /* Main */ 
 int main(int ac, char **argv){
-  char *prompt = "(JW) $ ";
   char *lineptr;
   size_t n = 0; 
+  prompt = "(JW) $ ";
   strcpy(vn, "1.0.0");
   startup();
 
   /* declaring void variables */
   (void)ac; (void)argv;
-
-  printf("%s | %s ", getcwd(cwd, sizeof(cwd)), prompt);
-  getline(&lineptr, &n, stdin);
-  get_tokens(lineptr);
-  
-  printf("%s\n", lineptr);
+  while (1 == 1){
+  	refresh_prompt(lineptr, n);
+  }
 
   free(lineptr);
   return (0);
@@ -59,9 +57,10 @@ void get_tokens(char line) {
 /* 
 * TODO: refresh current prompt to the newest generation
 */
-void refresh_promt(){
+void refresh_prompt(char* lineptr, size_t n)
+{
 	printf("%s | %s ", getcwd(cwd, sizeof(cwd)), prompt);
     getline(&lineptr, &n, stdin);
     get_tokens(lineptr);
-	printf("%s\n", lineptr);
+	printf("%s", lineptr);
 }
