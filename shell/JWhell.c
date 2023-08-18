@@ -1,5 +1,7 @@
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* Global variables */
 static char vn[10];
@@ -9,11 +11,11 @@ static void startup(void);
 
 /* Main */ 
 int main(int ac, char **argv){
-  vn = "1.0.0";
-  startup();
   char *prompt = "(JW) $ ";
   char *lineptr;
   size_t n = 0; 
+  strcpy(vn, "1.0.0");
+  startup();
 
   /* declaring void variables */
   (void)ac; (void)argv;
