@@ -55,7 +55,7 @@ void get_tokens(char* tokens, char* lineptr) {
 	token = strtok(*lineptr, 32);
 	while( token != NULL ) {
       token = strtok(NULL, 32);
-	  strcpy(tokens[i++], token);
+	  strcpy(tokens[i++], *token);
    }
 }
 /* 
