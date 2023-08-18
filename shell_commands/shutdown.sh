@@ -9,6 +9,11 @@ if [ "$choice" == "y" ] || [ "$choice" == "Y" ]; then
     # Perform the shutdown
     sudo shutdown -h now
 else
-    echo "Shutdown cancelled."
+    if [ "$choice" == "n"] || [ "$choice" == "N" ]; then
+        echo "Shutdown cancelled."
+    else
+        echo "Unkown input."
+        ./shutdown.sh
+    fi
 fi
 
