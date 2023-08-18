@@ -56,3 +56,9 @@ void get_tokens(char *line) {
     code gen 
     */
 }
+/* 
+* TODO: refresh current prompt to the newest generation
+*/
+char* refresh_promt(){
+
+}
