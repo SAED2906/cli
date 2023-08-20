@@ -26,6 +26,7 @@ int main(int ac, char **argv){
   /* declaring void variables */
   (void)ac; (void)argv;
   while (1 == 1){
+	/* we are parsing an ununutalized pointer pls fix (malloc or use an array) */
   	refresh_prompt(lineptr, n, tokens);
   }
 
@@ -49,13 +50,20 @@ void startup(void)
 *  we need to add a parser 
 */
 void get_tokens(char* tokens, char* lineptr) {
+	/* TODO: 
+	 * our tokenisation is wrong ong i think this is where we are getting the
+	 * seg fault, we should store tokens using a delimeter of some sort bcus rn
+	 * istn it just adding to the string? (without anyway of seperating the
+	 * tokens what if a token is longer than 1 char? am i being silly?
+	 * i dont want to code so i just added comments that i think we need lol*/
+	
 	char *token;
 	int i = 0;
 
 	token = strtok(*lineptr, 32);
 	while( token != NULL ) {
-      token = strtok(NULL, 32);
-	  strcpy(tokens[i++], *token);
+      	token = strtok(NULL, 32);
+	strcpy(tokens[i++], *token);
    }
 }
 /* 
