@@ -77,7 +77,8 @@ void refresh_prompt(char* lineptr, size_t n, char* tokens)
 	printf("%s", tokens[0]);
 	/* chdir(".."); */
 }
-/* get_promt_length() method gets the promt length
+/* 
+ * get_promt_length() method gets the promt length
  * */
 int get_promt_length(char *str){
 	int i = 0;
