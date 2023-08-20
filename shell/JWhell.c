@@ -72,8 +72,8 @@ void get_tokens(char* tokens, char* lineptr) {
 void refresh_prompt(char* lineptr, size_t n, char* tokens)
 {
 	printf("%s | %s ", getcwd(cwd, sizeof(cwd)), prompt);
-    getline(&lineptr, &n, stdin);
-    get_tokens(tokens, lineptr);
+    	getline(&lineptr, &n, stdin);
+    	get_tokens(tokens, lineptr);
 	printf("%s", tokens[0]);
 	/* chdir(".."); */
 }
