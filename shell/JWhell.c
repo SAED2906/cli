@@ -15,23 +15,22 @@ static void startup(void);
 static void refresh_prompt(char* lineptr, size_t n, char* tokens);
 /* Main */ 
 int main(int ac, char **argv){
-  char *lineptr;
-  size_t n = 0; 
-  char *tokens[3][1024];
+	char *lineptr;
+  	size_t n = 0; 
+  	char *tokens[3][1024];
 
-  prompt = "(JW) $ ";
-  strcpy(vn, "1.0.1");
-  startup();
+  	prompt = "(JW) $ ";
+  	strcpy(vn, "1.0.1");
+  	startup();
 
-  /* declaring void variables */
-  (void)ac; (void)argv;
-  while (1 == 1){
-	/* we are parsing an ununutalized pointer pls fix (malloc or use an array) */
-  	refresh_prompt(lineptr, n, tokens);
-  }
-
-  free(lineptr);
-  return (0);
+  	/* declaring void variables */
+  	(void)ac; (void)argv;
+  	while (1 == 1){
+		/* we are parsing an ununutalized pointer pls fix (malloc or use an array) */
+  		refresh_prompt(lineptr, n, tokens);
+  	}
+  	free(lineptr);
+  	return (0);
 }
 
 void startup(void)
@@ -62,8 +61,8 @@ void get_tokens(char* tokens, char* lineptr) {
 
 	token = strtok(*lineptr, 32);
 	while( token != NULL ) {
-      token = strtok(NULL, 32);
-	  strcpy(tokens[i++], *token);
+      	token = strtok(NULL, 32);
+	strcpy(tokens[i++], *token);
    }
 }
 /* 
