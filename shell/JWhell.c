@@ -54,7 +54,7 @@ void get_tokens(char* tokens, char* lineptr) {
 	 * our tokenisation is wrong ong i think this is where we are getting the
 	 * seg fault, we should store tokens using a delimeter of some sort bcus rn
 	 * istn it just adding to the string? (without anyway of seperating the
-	 * tokens what if a token is longer than 1 char? am i being silly?
+	 * tokens what if a token is longer than 1 char? am i being sill?
 	 * i dont want to code so i just added comments that i think we need lol*/
 	
 	char *token;
@@ -62,8 +62,8 @@ void get_tokens(char* tokens, char* lineptr) {
 
 	token = strtok(*lineptr, 32);
 	while( token != NULL ) {
-      	token = strtok(NULL, 32);
-	strcpy(tokens[i++], *token);
+      token = strtok(NULL, 32);
+	  strcpy(tokens[i++], *token);
    }
 }
 /* 
@@ -76,4 +76,13 @@ void refresh_prompt(char* lineptr, size_t n, char* tokens)
     get_tokens(tokens, lineptr);
 	printf("%s", tokens[0]);
 	/* chdir(".."); */
+}
+/* get_promt_length() method gets the promt length
+ * */
+int get_promt_length(char *str){
+	int i = 0;
+	while (str[i]!='\0') {
+		i++;
+	}
+	return i;
 }
