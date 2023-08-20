@@ -48,6 +48,7 @@ void startup(void)
 /* TODO: 
 *  we need to add a parser 
 */
+
 void get_tokens(char* tokens, char* lineptr) {
 	/* TODO: 
 	 * our tokenisation is wrong ong i think this is where we are getting the
@@ -76,7 +77,8 @@ void refresh_prompt(char* lineptr, size_t n, char* tokens)
 	printf("%s", tokens[0]);
 	/* chdir(".."); */
 }
-/* get_promt_length() method gets the promt length
+/* 
+ * get_promt_length() method gets the promt length
  * */
 int get_promt_length(char *str){
 	int i = 0;
