@@ -27,7 +27,6 @@ int main(int ac, char **argv){
         /* declaring void variables */
         (void)ac; (void)argv;
         while (1 == 1){
-                /* we are parsing an ununutalized pointer pls fix (malloc or use an array) */
                 refresh_prompt(lineptr, n);
                 free(lineptr);
         }
